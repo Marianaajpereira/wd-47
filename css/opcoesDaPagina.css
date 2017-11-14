@@ -16,11 +16,11 @@
 }
 
 .opcoesDaPagina-botao {
-	padding: .5em;
+	padding: .7em;
 	max-width: 4.5em;
 	border: none;
 	background: rgba(0,0,0,.25);
-	color: white;
+	color: rgba(255,255,255,.7);
 }
 
 .opcoesDaPagina-opcao#busca {

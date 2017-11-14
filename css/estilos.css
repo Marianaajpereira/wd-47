@@ -37,3 +37,7 @@
   width: auto;
   flex-basis: auto;
 }
+.cartao--some {
+  opacity: 0;
+  transition: 300ms;
+}
