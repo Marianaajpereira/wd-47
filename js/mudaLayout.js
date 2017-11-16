@@ -1,3 +1,8 @@
+// função main anônima
+( function () {
+
+  'use strict'
+
 var btn = document.querySelector("#mudaLayout")
 var mural = document.querySelector(".mural")
 
@@ -15,3 +20,6 @@ function mudaLayout() {
 
 btn.addEventListener("click", mudaTexto)
 btn.addEventListener("click", mudaLayout)
+
+})
+ () // função main executada como anônima

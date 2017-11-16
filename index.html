@@ -11,16 +11,18 @@
   <link rel="stylesheet" href="css/cartao.css">
   <link rel="stylesheet" href="css/opcoesDoCartao.css">
   <link rel="stylesheet" href="css/novoCartao.css">
+  <link rel="stylesheet" href="css/mural.css">
 </head>
 <body>
   <header class="container cabecalho">
     <h1 class="cabecalho-logo">Ceep da Mari</h1>
     <div class="opcaoDaPagina">
+      <input type="search" id="busca" placeholder="Busca" class="opcoesDaPagina-opcao">
       <button id="mudaLayout" class="opcoesDaPagina-opcoes opcoesDaPagina-botao">Linhas</button>
     </div>
   </header>
   <form class="novoCartao container">
-    <textarea class="conteudo"></textarea>
+    <textarea class="conteudo" placeholder="Preencha o campo"></textarea>
     <input type="submit" class="btnSalvar"></form>
 <section class="mural container">
   <div class="cartao" id="cartao_1">
@@ -64,5 +66,6 @@
 <script src="js/mudaLayout.js"></script>
 <script src="js/removeCartao.js"></script>
 <script src="js/novoCartao.js"></script>
+<script src="js/busca.js"></script>
 </body>
 </html>

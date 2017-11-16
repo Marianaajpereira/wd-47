@@ -1,3 +1,5 @@
+    'use strict'
+
 //var btnRemove = document.querySelectorAll(".btnRemove")
 var btns = document.querySelectorAll(".btnRemove")
 
