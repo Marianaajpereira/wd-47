@@ -9,7 +9,12 @@
     if(busca){
       $(".cartao").hide().filter(function(){
 
-        return $(this).find("p").text().match(new RegExp(busca,"i"))
+        var buscaRegExp = new RegExp(busca,"i")
+
+        var retorno = $(this).find("p").text().match(buscaRegExp)
+
+       return retorno
+
       }).show()
     } else {
       $(".cartao").show();

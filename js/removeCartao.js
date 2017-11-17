@@ -1,5 +1,3 @@
-    'use strict'
-
 //var btnRemove = document.querySelectorAll(".btnRemove")
 var btns = document.querySelectorAll(".btnRemove")
 
@@ -8,6 +6,8 @@ for(var i = 0; i < btns.length; i++) {
 //  btnRemove.addEventListener("click", removeCartao)
   btns[i].addEventListener("click", removeCartao)
 }
+
+'use strict'
 
 function removeCartao() {
 //  console.log(this)
