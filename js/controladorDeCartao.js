@@ -2,17 +2,42 @@
 
 var contador = $(".cartao").length
 
+function ehPraEditar(cartao) {
+  console.log("ehPraEditar")
+  var liberado = cartao.find("p").attr("contenteditable")
+    if(liberado == "true") {
+      cartao.find("p").attr("contenteditable", "false")
+      $(".mural").trigger("precisaSincronizar")
+    } else {
+      cartao.find("p").attr("contenteditable", "true")
+    }
+}
+
 function adicionaCartao(conteudo, cor) {
   contador++
 
   var tipoCartao = decideTipoCartao(conteudo)
 
-  var cartao = $("<div>").css("background-color", cor).addClass("cartao").attr("id", "cartao_" + contador).addClass(tipoCartao)
+  var cartao = $("<div>")
+  .css("background-color", cor)
+  .addClass("cartao")
+  .attr("id", "cartao_" + contador)
+  .addClass(tipoCartao)
+  .click(function (event) {
+    var elementoClicado = $(event.target)
+    var cartao = $(this)
+    if(elementoClicado.hasClass("opcoesDoCartao-edita")) {
+      ehPraEditar(cartao)
+    }
+
+
+  })
   var opcoesDoCartao = $("<div>").addClass("opcoesDoCartao")
   var btnRemove = $("<button>").addClass("opcoesDoCartao-opcao").addClass("btnRemove").attr("ref", contador).text("X").click(removeCartao)
-  var tagConteudo = $("<p>").contentaddClass("cartao-conteudo").append(conteudo)
+  var tagConteudo = $("<p>").addClass("cartao-conteudo").append(conteudo)
+  var btnEdita = $("<button>").addClass("opcoesDoCartao-opcao ").addClass("opcoesDoCartao-edita").attr("ref", contador)
 
-  opcoesDoCartao.append(btnRemove)
+  opcoesDoCartao.append(btnRemove).append(btnEdita)
   cartao.append(opcoesDoCartao).append(tagConteudo)
 
   $(".mural").prepend(cartao)
